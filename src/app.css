@@ -1,0 +1,8 @@
+.contenedor{
+    margin: 100px;
+    border: 1px solid;
+    background-color: rgb(161, 228, 240);
+}
+.btn{
+    background-color: rgb(249, 1, 1);
+}
