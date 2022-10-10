@@ -1,14 +1,13 @@
 import AdminColores from "./components/AdminColores";
 import "./app.css"
-import Colores from "./components/Colores";
+import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
-    <>
+    <Container>
     <AdminColores>
     </AdminColores>
-    <Colores></Colores>
-    </>
+    </Container>
   );
 }
 

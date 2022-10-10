@@ -1,8 +1,17 @@
-.contenedor{
-    margin: 100px;
-    border: 1px solid;
-    background-color: rgb(161, 228, 240);
+.formulario{
+    /* display: flex; */
+    text-align: center;
+    margin-top: 40px;
+    border: 2px solid rgb(241, 36, 36);
 }
-.btn{
-    background-color: rgb(249, 1, 1);
+.elegirColor{
+  padding: 40px;
+    background: rgb(244, 138, 138);
+}
+.boton{
+    background-color: rgb(240, 249, 4);
+    margin: 10px;
+}
+.titulo{
+    font-size: 25px;
 }
