@@ -1,12 +1,11 @@
 import React from "react";
-import Button from "react-bootstrap/esm/Button";
-import ListGroup from "react-bootstrap/ListGroup";
+import {ListGroup, Button} from "react-bootstrap";
 
-const Color = () => {
+const Color = ({nombreColor, borrarColor}) => {
   return (
     <ListGroup.Item className="d-flex justify-content-between">
-      color 1
-      <Button variant="success">Borrar</Button>
+     {nombreColor}
+      <Button variant="success" onClick={()=> borrarColor(nombreColor)}>Borrar</Button>
     </ListGroup.Item>
   );
 };

@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Colores from "./Colores";
 
+
 const AdminColores = () => {
   // aqui va la logica
   const [color, setColor] = useState("");
@@ -16,6 +17,13 @@ const AdminColores = () => {
     setArrayColor([...arrayColor, color]);
     setColor("")
   };
+
+const borrarColor = (nombre)=>{
+let arregloModificado = arrayColor.filter((item)=> item !== nombre);
+//actualizar el state 
+setArrayColor(arregloModificado);
+
+}
 
   return (
     <Container>
@@ -34,7 +42,7 @@ const AdminColores = () => {
           Enviar
         </Button>
       </Form>
-      <Colores></Colores>
+      <Colores propsArregloColor={arrayColor} borrarColor={borrarColor}></Colores>
     </Container>
   );
 };
