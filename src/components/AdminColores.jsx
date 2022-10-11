@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,8 +9,15 @@ import Colores from "./Colores";
 
 const AdminColores = () => {
   // aqui va la logica
+  const coloresLocalStorage = JSON.parse( localStorage.getItem(`listaColores`)) || [];
   const [color, setColor] = useState("");
-  const [arrayColor, setArrayColor] = useState([]);
+  const [arrayColor, setArrayColor] = useState(coloresLocalStorage);
+
+  //ciclo de vida del componente 
+useEffect(() => {
+localStorage.setItem(`listaColores`, JSON.stringify(arrayColor));
+},[arrayColor])
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
