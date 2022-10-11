@@ -1,12 +1,18 @@
 import React from "react";
-import {ListGroup, Button} from "react-bootstrap";
+import { Button, Card} from "react-bootstrap";
 
 const Color = ({nombreColor, borrarColor}) => {
   return (
-    <ListGroup.Item className="d-flex justify-content-between">
-     {nombreColor}
-      <Button variant="success" onClick={()=> borrarColor(nombreColor)}>Borrar</Button>
-    </ListGroup.Item>
+    <Card className="d-flex justify-content-between">
+      
+        <Card.Header>{nombreColor}</Card.Header>
+        <Card.Body style = {{backgroundColor: nombreColor}}>
+
+        </Card.Body>
+        <Card.Footer>
+        <Button variant="success" onClick={()=> borrarColor(nombreColor)}>Borrar</Button>
+        </Card.Footer>
+        </Card>
   );
 };
 

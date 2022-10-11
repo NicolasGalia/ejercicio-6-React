@@ -5,6 +5,9 @@ import Form from "react-bootstrap/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Colores from "./Colores";
+import Swal from "sweetalert2";
+import { validarColor, colores } from "../colorElegido";
+
 
 
 const AdminColores = () => {
@@ -18,12 +21,20 @@ useEffect(() => {
 localStorage.setItem(`listaColores`, JSON.stringify(arrayColor));
 },[arrayColor])
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const agregarColor = () => {
+  if (!validarColor(color) || !color.trim()) {
+    Swal.fire({
+      icon: "info",
+      html: "<p>Indica un color, prueba en <strong>Ingles</strong><br>Ej: blue, red, deepOrange</p>",
+    });
+    setColor("");
+    return;
+  } else {
     setArrayColor([...arrayColor, color]);
-    setColor("")
-  };
+    setColor("");
+  }
+};
+
 
 const borrarColor = (nombre)=>{
 let arregloModificado = arrayColor.filter((item)=> item !== nombre);
@@ -34,7 +45,7 @@ setArrayColor(arregloModificado);
 
   return (
     <Container>
-      <Form className="formulario" onSubmit={handleSubmit}>
+      <Form className="formulario" onSubmit= {agregarColor}>
         <Form.Group className="titulo">Administrar Colores</Form.Group>
         <Form.Group className="mb-3 elegirColor">
           <Form.Label>Elija un color</Form.Label>

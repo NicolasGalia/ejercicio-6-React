@@ -3,6 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Color from "./Color";
 import Container from "react-bootstrap/Container";
 
+
 const Colores = ({propsArregloColor, borrarColor}) => {
   return (
     <Container>
